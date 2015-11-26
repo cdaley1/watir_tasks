@@ -25,9 +25,11 @@ postbtn = browser.button(class:"create_post_button")
 
 postbtn.click
 
+browser.goto "http://broidontusethis.tumblr.com/"
+browser.alert.ok
 
 #verify
-verify = browser.div(class: 'post_title')
+verify = browser.h2(class: 'title')
 if verify.text.match /Testing 123/
 	puts "Post found: #{verify.text}"
 else
@@ -36,4 +38,5 @@ end
 
 #Teardown
 browser.quit
+
 
